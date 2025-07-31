@@ -4,6 +4,7 @@
 Provides a type-annotated function to add two float numbers.
 """
 
+
 def add(a: float, b: float) -> float:
     """
     Add two float numbers.
