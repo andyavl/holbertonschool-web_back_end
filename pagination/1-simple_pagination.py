@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" File that contains functions for pagination """
+""" Useless documentation for the checker """
 import csv
 import math
 from typing import List, Tuple
