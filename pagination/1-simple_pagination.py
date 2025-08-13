@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import csv
 import math
-from typing import List
+from typing import List, Tuple
 
 """
 index_range module
@@ -11,7 +11,7 @@ for paginating a list of items.
 """
 
 
-def index_range(page, page_size):
+def index_range(page, page_size) -> Tuple:
     """
     Calculate the start and end indices for a given page and page size.
 
@@ -64,5 +64,8 @@ class Server:
         start, end = index_range(page, page_size)
 
         dataset = self.dataset()
+
+        if start >= len(dataset):
+            return []
 
         return dataset[start:end]
