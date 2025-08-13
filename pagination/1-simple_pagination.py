@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+""" File that contains functions for pagination """
 import csv
 import math
 from typing import List, Tuple
