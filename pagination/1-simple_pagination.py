@@ -58,14 +58,14 @@ class Server:
         """
         Retrieve a specific page of data from the dataset.
         """
-        assert isinstance(page, int) and page > 0
-        assert isinstance(page_size, int) and page_size > 0
+        assert type(page) is int and page > 0
+        assert type(page_size) is int and page_size > 0
 
-        range = index_range(page, page_size)
+        start, end = index_range(page, page_size)
 
-        dataset = Server.dataset(self)
+        dataset = self.dataset()
 
-        if range[0] >= len(dataset):
+        if start >= len(dataset):
             return []
 
-        return dataset[range[0]:range[1]]
+        return dataset[start:end]
