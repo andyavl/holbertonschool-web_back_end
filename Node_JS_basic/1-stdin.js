@@ -1,10 +1,20 @@
-console.log('Welcome to Holberton School, what is your name?');
+const readline = require('readline');
 
-process.stdin.on('data', (buffer) => {
-  const INPUT = buffer.toString().trim();
-  console.log(`Your name is: ${INPUT}`);
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+  terminal: false
 });
 
-process.stdin.on('end', () => {
+console.log('Welcome to Holberton School, what is your name?');
+
+let name = null;
+
+rl.on('line', (line) => {
+  name = line.trim();
+  console.log(`Your name is: ${name}`);
+});
+
+rl.on('close', () => {
   console.log('This important software is now closing');
 });
