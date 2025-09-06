@@ -1,10 +1,12 @@
-process.stdout.write('Welcome to Holberton School, what is your name?\n');
+console.log('Welcome to Holberton School, what is your name?');
 
 process.stdin.on('data', (buffer) => {
   const myName = buffer.toString().trim();
-  process.stdout.write(`Your name is: ${myName}\n`);
+  if (myName !== null) {
+  console.log(`Your name is: ${myName}`);
+  }
 });
 
 process.stdin.on('end', () => {
-  process.stdout.write('This important software is now closing\n');
+  console.log('This important software is now closing');
 });
